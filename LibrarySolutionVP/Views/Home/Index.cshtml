@@ -1,0 +1,24 @@
+﻿
+
+@{ ViewData["Title"] = "Home Page"; }
+
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div>Country: TR - US</div>
+<form asp-controller="Home" asp-action="Calculate" method="post">
+    <div class="form-group">
+        <input type="date" name="bookingModel.CheckoutDate" />
+        <input type="date" name="bookingModel.ReturnDate" />
+        <input type="text" name="bookingModel.CountryName" />
+
+        <button type="submit">Calculate</button>
+    </div>
+</form>
+
+@if (ViewBag.Penalty >= 0)
+{
+<div>penalty: @ViewBag.Penalty</div>}
